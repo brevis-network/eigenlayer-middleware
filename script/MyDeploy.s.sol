@@ -351,7 +351,7 @@ contract Deployer {
         vm.serializeAddress(permissions, "brevisOwner", brevisOwner);
         vm.serializeAddress(permissions, "brevisUpgrader", brevisUpgrader);
         vm.serializeAddress(permissions, "brevisChurner", churner);
-        vm.serializeAddress(permissions, "pauserRegistry", pauser);
+        vm.serializeAddress(permissions, "pauserRegistry", address(pauser));
         string memory permissions_output = vm.serializeAddress(permissions, "brevisEjector", ejector);
         
         vm.serializeString(parent_object, chain_info, chain_info_output);

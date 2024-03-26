@@ -40,12 +40,13 @@ contract BrevisEigen is BLSSignatureChecker, ServiceManagerBase {
         NonSignerStakesAndSignature memory nonSignerStakesAndSignature
     ) external {
         bytes32 msghash = keccak256(abi.encodePacked(block.chainid, address(this), "BrevisEigen",reqid, blockNum));
+        bytes memory memQ = quorumNumbers;
         (
             QuorumStakeTotals memory quorumStakeTotals,
             bytes32 hashOfNonSigners
         ) = checkSignatures(
                 msghash,
-                quorumNumbers,
+                memQ,
                 uint32(blockNum),
                 nonSignerStakesAndSignature
             );

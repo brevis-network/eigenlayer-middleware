@@ -1,5 +1,33 @@
 {
     "chainId": 17000,
     "avsAddr": "0x055733000064333CaDDbC92763c58BF0192fFeBf",
-    "delegationMgr": "0xA44151489861Fe9e3055d95adC98FbD462B948e7"
+    "delegationMgr": "0xA44151489861Fe9e3055d95adC98FbD462B948e7",
+
+    "permissions" : {
+        "owner": "0x9F6B03Cb6d8AB8239cF1045Ab28B9Df43dfCC823",
+        "upgrader": "0x9F6B03Cb6d8AB8239cF1045Ab28B9Df43dfCC823",
+        "churner": "0x9F6B03Cb6d8AB8239cF1045Ab28B9Df43dfCC823",
+        "ejector": "0x9F6B03Cb6d8AB8239cF1045Ab28B9Df43dfCC823"
+    },
+
+    "minimumStakes": [
+        1000000000000000000
+    ],
+
+    "strategyWeights": [
+        [
+          {
+            "0_strategy": "0x80528D6e9A2BAbFc766965E0E26d5aB08D9CFaF9", 
+            "1_multiplier": 1000000000000000000
+          }
+        ]
+      ],
+    
+      "operatorSetParams": [
+        {
+          "0_maxOperatorCount": 200,
+          "1_kickBIPsOfOperatorStake": 11000,
+          "2_kickBIPsOfTotalStake": 50
+        }
+      ]
 }
