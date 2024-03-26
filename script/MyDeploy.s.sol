@@ -35,6 +35,10 @@ import "forge-std/StdJson.sol";
 
 //forge script script/MyDeploy.s.sol:Deployer --rpc-url $RPC_URL  --private-key $PRIVATE_KEY -vvvv //--broadcast 
 contract Deployer {
+    address constant private VM_ADDRESS =
+        address(bytes20(uint160(uint256(keccak256('hevm cheat code')))));
+
+    Vm public constant vm = Vm(VM_ADDRESS);
     //string public existingDeploymentInfoPath  = string(bytes("./script/deploy/existing/Holesky_preprod.json"));
     string public deployConfigPath = string.concat("script/configs/mydeploy.json");
     string public outputPath = string.concat("script/output/mydeploy_holesky.json");
@@ -43,7 +47,7 @@ contract Deployer {
     address public brevisOwner;
     address public brevisUpgrader;
 
-    address public pauser; // pauserRegistry contract
+    PauserRegistry public pauser; // pauserRegistry contract
     uint256 public initalPausedStatus;
 
     address public avsDirectory; // deployed by eigen team, read from config
@@ -72,7 +76,7 @@ contract Deployer {
         // check that the chainID matches the one in the config
         uint256 currentChainId = block.chainid;
         uint256 configChainId = stdJson.readUint(config_data, ".chainId");
-        emit log_named_uint("You are deploying on ChainID", currentChainId);
+        // emit log_named_uint("You are deploying on ChainID", currentChainId);
         require(configChainId == currentChainId, "You are on the wrong chain for this config");
 
         avsDirectory = stdJson.readAddress(config_data, ".avsAddr");
@@ -179,7 +183,7 @@ contract Deployer {
                 brevisOwner,
                 churner,
                 ejector,
-                IPauserRegistry(pauser),
+                pauser,
                 initalPausedStatus, 
                 operatorSetParams, 
                 minimumStakeForQuourm,
@@ -293,8 +297,6 @@ contract Deployer {
         ) = _parseRegistryCoordinatorParams(config_data);
 
         require(brevisEigen.owner() == brevisOwner, "brevisEigen.owner() != brevisOwner");
-        require(brevisEigen.pauserRegistry() == IPauserRegistry(pauser), "brevisEigen: pauser registry not set correctly");
-        require(brevisEigen.paused() == initalPausedStatus, "brevisEigen: init paused status set incorrectly");
 
         require(registryCoordinator.owner() == brevisOwner, "registryCoordinator.owner() != brevisOwner");
         require(registryCoordinator.churnApprover() == churner, "registryCoordinator.churner() != churner");

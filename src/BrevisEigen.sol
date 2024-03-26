@@ -1,9 +1,8 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.12;
+pragma solidity =0.8.12;
 
 import {BLSSignatureChecker, IRegistryCoordinator, IStakeRegistry} from "./BLSSignatureChecker.sol";
 import {ServiceManagerBase, IAVSDirectory} from "./ServiceManagerBase.sol";
-// import {IPauserRegistry} from "eigenlayer-contracts/src/contracts/interfaces/IPauserRegistry.sol";
 
 // simple contract to verify via eigenlayer BLS
 contract BrevisEigen is BLSSignatureChecker, ServiceManagerBase {
