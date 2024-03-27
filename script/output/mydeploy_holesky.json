@@ -1,0 +1,26 @@
+{
+  "addresses": {
+    "blsApkRegistry": "0x3cA590190337781524F3E6744f48E1b24f111761",
+    "blsApkRegistryImplementation": "0x16649Fc66E802151AD4fB37A5925c5E588B413e9",
+    "brevisEigen": "0x7A46219950d8a9bf2186549552DA35Bf6fb85b1F",
+    "brevisEigenImplementation": "0xB869fC71BEa0880E44dcFf4Ca338F5bEF0a3D0fb",
+    "brevisProxyAdmin": "0xC8CAf3c1D76D264B6D5d511d883B58b3874eAFa0",
+    "indexRegistry": "0xaB2692D14898cAc8F1D5E3FB5BC95cF84092A2A6",
+    "indexRegistryImplementation": "0x3F44aAc0aB1261ac16dBd0E0DC1ae5F1DC7fef08",
+    "registryCoordinator": "0x0dB4ceE042705d47Ef6C0818E82776359c3A80Ca",
+    "registryCoordinatorImplementation": "0xA50e5203ECa1685B4e01A8A569dd12150A8b419D",
+    "stakeRegistry": "0x630dCEA986922633121BF499046015990E3660cC",
+    "stakeRegistryImplementation": "0x64B228d409a7E0d35f8Ee99a5D213dc853aD664D"
+  },
+  "chainInfo": {
+    "chainId": 17000,
+    "deploymentBlock": 1222716
+  },
+  "permissions": {
+    "brevisChurner": "0x9F6B03Cb6d8AB8239cF1045Ab28B9Df43dfCC823",
+    "brevisEjector": "0x9F6B03Cb6d8AB8239cF1045Ab28B9Df43dfCC823",
+    "brevisOwner": "0x9F6B03Cb6d8AB8239cF1045Ab28B9Df43dfCC823",
+    "brevisUpgrader": "0x9F6B03Cb6d8AB8239cF1045Ab28B9Df43dfCC823",
+    "pauserRegistry": "0xC7f2Cf4845C6db0e1a1e91ED41Bcd0FcC1b0E141"
+  }
+}

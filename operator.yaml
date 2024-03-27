@@ -1,0 +1,11 @@
+operator:
+    address: 0x9F6B03Cb6d8AB8239cF1045Ab28B9Df43dfCC823
+    earnings_receiver_address: 0x9F6B03Cb6d8AB8239cF1045Ab28B9Df43dfCC823
+    delegation_approver_address: "0x0000000000000000000000000000000000000000"
+    staker_opt_out_window_blocks: 0
+    metadata_url: "https://getcelerapp.s3.us-west-1.amazonaws.com/brevis/forEigen/metadata.json"
+el_delegation_manager_address: 0xA44151489861Fe9e3055d95adC98FbD462B948e7
+eth_rpc_url: https://ethereum-holesky-rpc.publicnode.com
+private_key_store_path: /Users/junda/.eigenlayer/operator_keys/my9f.ecdsa.key.json
+signer_type: local_keystore
+chain_id: 17000
