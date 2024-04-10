@@ -85,6 +85,8 @@ contract Deployer {
         brevisOwner = stdJson.readAddress(config_data, ".permissions.owner");
         brevisUpgrader = stdJson.readAddress(config_data, ".permissions.upgrader");
         
+        vm.startBroadcast();
+
         // deploy our own pauser, if already deployed, read from config
         address[] memory pausers = new address[](1);
         pausers[0] = brevisOwner;
@@ -93,7 +95,7 @@ contract Deployer {
         // unpause value is 0, uncomment next if we want to begin w/ paused
         // initalPausedStatus = stdJson.readUint(config_data, ".permissions.initalPausedStatus");
 
-        vm.startBroadcast();
+        
 
         // deploy proxy admin for ability to upgrade proxy contracts
         brevisProxyAdmin = new ProxyAdmin();
