@@ -11,8 +11,8 @@ contract BrevisEigen is BLSSignatureChecker, ServiceManagerBase {
 
     // if request has been verified, will save reqKey -> true, reqKey = keccak256(abi.encodePacked(_proofId, _nonce));
     mapping(bytes32 => bool) public records;
-    // this reqid has been verified by agg bls sig
-    event Verified(bytes32 requestId, bytes32[] proofIds, uint64[] nonces);
+    // this reqid has been verified by agg bls sig, reqid = keccak256(abi.encodePacked(_proofIds, _nonces))
+    event Verified(bytes32 reqid, bytes32[] proofIds, uint64[] nonces);
 
     constructor(
         IAVSDirectory __avsDirectory,
