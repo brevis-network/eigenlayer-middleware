@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity =0.8.12;
+pragma solidity ^0.8.12;
 
 import {BLSSignatureChecker, IRegistryCoordinator, IStakeRegistry} from "./BLSSignatureChecker.sol";
 import {ServiceManagerBase, IAVSDirectory} from "./ServiceManagerBase.sol";
@@ -8,6 +8,7 @@ import {ServiceManagerBase, IAVSDirectory} from "./ServiceManagerBase.sol";
 contract BrevisEigen is BLSSignatureChecker, ServiceManagerBase {
     // admin configs
     bytes public quorumNumbers = hex"00_01"; // 2 quorums, value to be determined
+    uint64 public blkNumTimeout = 20000; // only accept recent reference block number
 
     constructor(
         IAVSDirectory __avsDirectory,
@@ -34,6 +35,7 @@ contract BrevisEigen is BLSSignatureChecker, ServiceManagerBase {
         uint64 blockNum,
         NonSignerStakesAndSignature memory nonSignerStakesAndSignature
     ) external view {
+        require(blockNum > uint64(block.number) - blkNumTimeout, "not recent block number");
         bytes memory memQ = quorumNumbers;
         (
             QuorumStakeTotals memory quorumStakeTotals,
@@ -53,5 +55,9 @@ contract BrevisEigen is BLSSignatureChecker, ServiceManagerBase {
     // admin only
     function setQuorums(bytes calldata newQ) external onlyOwner() {
         quorumNumbers = newQ;
+    }
+
+    function setBlkNumTimeout(uint64 timeout) external onlyOwner() {
+        blkNumTimeout = blkNumTimeout;
     }
 }
