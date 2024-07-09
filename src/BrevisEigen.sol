@@ -37,15 +37,12 @@ contract BrevisEigen is BLSSignatureChecker, ServiceManagerBase {
     ) external view {
         require(blockNum > uint64(block.number) - blkNumTimeout, "not recent block number");
         bytes memory memQ = quorumNumbers;
-        (
-            QuorumStakeTotals memory quorumStakeTotals,
-            bytes32 hashOfNonSigners
-        ) = checkSignatures(
-                msgHash,
-                memQ,
-                uint32(blockNum),
-                nonSignerStakesAndSignature
-            );
+        (QuorumStakeTotals memory quorumStakeTotals,) = checkSignatures(
+            msgHash,
+            memQ,
+            uint32(blockNum),
+            nonSignerStakesAndSignature
+        );
         for (uint i = 0; i < quorumNumbers.length; i++) {
             // must over 2/3
             require(quorumStakeTotals.signedStakeForQuorum[i] >= (quorumStakeTotals.totalStakeForQuorum[i]*2)/3+1);
@@ -58,6 +55,6 @@ contract BrevisEigen is BLSSignatureChecker, ServiceManagerBase {
     }
 
     function setBlkNumTimeout(uint64 timeout) external onlyOwner() {
-        blkNumTimeout = blkNumTimeout;
+        blkNumTimeout = timeout;
     }
 }
