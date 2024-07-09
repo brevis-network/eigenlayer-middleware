@@ -1,26 +1,26 @@
 {
   "addresses": {
-    "blsApkRegistry": "0x3cA590190337781524F3E6744f48E1b24f111761",
-    "blsApkRegistryImplementation": "0x16649Fc66E802151AD4fB37A5925c5E588B413e9",
-    "brevisEigen": "0x7A46219950d8a9bf2186549552DA35Bf6fb85b1F",
-    "brevisEigenImplementation": "0xB869fC71BEa0880E44dcFf4Ca338F5bEF0a3D0fb",
-    "brevisProxyAdmin": "0xC8CAf3c1D76D264B6D5d511d883B58b3874eAFa0",
-    "indexRegistry": "0xaB2692D14898cAc8F1D5E3FB5BC95cF84092A2A6",
-    "indexRegistryImplementation": "0x3F44aAc0aB1261ac16dBd0E0DC1ae5F1DC7fef08",
-    "registryCoordinator": "0x0dB4ceE042705d47Ef6C0818E82776359c3A80Ca",
-    "registryCoordinatorImplementation": "0xA50e5203ECa1685B4e01A8A569dd12150A8b419D",
-    "stakeRegistry": "0x630dCEA986922633121BF499046015990E3660cC",
-    "stakeRegistryImplementation": "0x64B228d409a7E0d35f8Ee99a5D213dc853aD664D"
+    "blsApkRegistry": "0xe8388b869D285D90AE2317435326Cb5c3F9AB9E5",
+    "blsApkRegistryImplementation": "0x56979Fd34a06518B918BFda0B50d62Cc856f6064",
+    "brevisEigen": "0x01516F3a434213B076A37d01c176a23E8398a942",
+    "brevisEigenImplementation": "0x8B83b9808DE79D5EEE97417bB14f82c41bCcD6F0",
+    "brevisProxyAdmin": "0x103b995Ba3630aCd36C6c57b33531dCC503E99E7",
+    "indexRegistry": "0x6aB7a4Ed30e9cD8128d6971AB41aeFa1CeBC6669",
+    "indexRegistryImplementation": "0x6e3de91247C09b5599b24257631aad5a8d99eA00",
+    "registryCoordinator": "0xc474Cd2aEb2161a0dc1e03bedc2187C3CF788F8B",
+    "registryCoordinatorImplementation": "0x321FEb402a5D0A13DeE59200Ac1FA91Ec2f4D1e4",
+    "stakeRegistry": "0x3B3A57b20a8Dd4AFF34639DF506A55370441b7f0",
+    "stakeRegistryImplementation": "0xf9aA5d9a06d96D90c1df0f759569679208Bd9e9D"
   },
   "chainInfo": {
     "chainId": 17000,
-    "deploymentBlock": 1222716
+    "deploymentBlock": 1892227
   },
   "permissions": {
-    "brevisChurner": "0x9F6B03Cb6d8AB8239cF1045Ab28B9Df43dfCC823",
-    "brevisEjector": "0x9F6B03Cb6d8AB8239cF1045Ab28B9Df43dfCC823",
-    "brevisOwner": "0x9F6B03Cb6d8AB8239cF1045Ab28B9Df43dfCC823",
-    "brevisUpgrader": "0x9F6B03Cb6d8AB8239cF1045Ab28B9Df43dfCC823",
+    "brevisChurner": "0x58b529F9084D7eAA598EB3477Fe36064C5B7bbC1",
+    "brevisEjector": "0x58b529F9084D7eAA598EB3477Fe36064C5B7bbC1",
+    "brevisOwner": "0x58b529F9084D7eAA598EB3477Fe36064C5B7bbC1",
+    "brevisUpgrader": "0x58b529F9084D7eAA598EB3477Fe36064C5B7bbC1",
     "pauserRegistry": "0xC7f2Cf4845C6db0e1a1e91ED41Bcd0FcC1b0E141"
   }
 }
