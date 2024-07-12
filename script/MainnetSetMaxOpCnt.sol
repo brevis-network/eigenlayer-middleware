@@ -9,17 +9,13 @@ import "forge-std/Test.sol";
 import "forge-std/Script.sol";
 import "forge-std/StdJson.sol";
 
-contract Deployer {
-    address constant private VM_ADDRESS =
-        address(bytes20(uint160(uint256(keccak256('hevm cheat code')))));
-    Vm public constant vm = Vm(VM_ADDRESS);
-
+contract Deployer is Script {
     RegistryCoordinator public regCo;
 
     function run() external {
         regCo = RegistryCoordinator(address(0x434621cfd8BcDbe8839a33c85aE2B2893a4d596C));
         vm.startBroadcast();
-        IRegistryCoordinator.OperatorSetParam memory opSetParam = IRegistryCoordinator.OperatorSetParam(68, 11000, 50);
+        IRegistryCoordinator.OperatorSetParam memory opSetParam = IRegistryCoordinator.OperatorSetParam(69, 11000, 50);
         regCo.setOperatorSetParams(1, opSetParam);
         vm.stopBroadcast();
     }
