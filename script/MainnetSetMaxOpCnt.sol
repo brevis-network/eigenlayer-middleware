@@ -15,7 +15,7 @@ contract Deployer is Script {
     function run() external {
         regCo = RegistryCoordinator(address(0x434621cfd8BcDbe8839a33c85aE2B2893a4d596C));
         vm.startBroadcast();
-        IRegistryCoordinator.OperatorSetParam memory opSetParam = IRegistryCoordinator.OperatorSetParam(69, 11000, 50);
+        IRegistryCoordinator.OperatorSetParam memory opSetParam = IRegistryCoordinator.OperatorSetParam(75, 11000, 50);
         regCo.setOperatorSetParams(1, opSetParam);
         vm.stopBroadcast();
     }
